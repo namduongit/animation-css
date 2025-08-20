@@ -12,6 +12,20 @@ Smooth motion sells the illusion of life. This README gives you a concise, visua
 
 ---
 
+## Example AnimationCSS
+```css
+.root {
+    animation-name: spin;
+    animation-duration: 5s;
+    animation-delay: 1s;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-play-state: paused;
+    /* Or */
+    animation: name duration timing-function delay iteration-count direction fill-mode;
+}
+```
+
 ## Keyword Easings (Built‑in)
 
 These 5 are supported in all modern browsers.

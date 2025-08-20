@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toast Notification</title>
+    <style>
+        body {
+            background: #111;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .toast {
+            position: fixed;
+            bottom: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 1rem 2rem;
+            background: #22c55e;
+            color: #fff;
+            border-radius: 8px;
+            font-weight: 600;
+            animation: slideUp 3s ease forwards;
+        }
+
+        @keyframes slideUp {
+            0% {
+                bottom: -100px;
+                opacity: 0;
+            }
+
+            20% {
+                bottom: 40px;
+                opacity: 1;
+            }
+
+            80% {
+                bottom: 40px;
+                opacity: 1;
+            }
+
+            100% {
+                bottom: -100px;
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="toast">Item Added!</div>
+</body>
+
+</html>

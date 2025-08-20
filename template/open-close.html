@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Animation</title>
+  <style>
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      background: #2563eb;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .4s ease;
+    }
+
+    .overlay.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .modal {
+      background: #fff;
+      color: #000;
+      padding: 2rem;
+      border-radius: 12px;
+      transform: scale(0.7) translateY(40px);
+      opacity: 0;
+      transition: all .4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    }
+
+    .overlay.show .modal {
+      transform: scale(1) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <button class="btn" id="open">Open Modal</button>
+  <div class="overlay" id="overlay">
+    <div class="modal">
+      <h2>Hello!</h2>
+      <p>This is a modal with animation </p>
+      <button id="close">Close</button>
+    </div>
+  </div>
+
+  <script>
+    const overlay = document.getElementById("overlay");
+    document.getElementById("open").onclick = () => overlay.classList.add("show");
+    document.getElementById("close").onclick = () => overlay.classList.remove("show");
+  </script>
+</body>
+
+</html>

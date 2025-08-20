@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkmark Animation</title>
+  <style>
+    body {
+      background: #0f172a;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .checkmark {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      border: 6px solid #22c55e;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: pop 0.5s ease-out forwards;
+    }
+
+    .checkmark::after {
+      content: \"\";
+      width: 30px;
+      height: 15px;
+      border-left: 6px solid #22c55e;
+      border-bottom: 6px solid #22c55e;
+      transform: scale(0) rotate(-45deg);
+      transform-origin: left top;
+      animation: draw 0.5s ease-out 0.5s forwards;
+    }
+
+    @keyframes pop {
+      from {
+        transform: scale(0);
+      }
+
+      to {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes draw {
+      to {
+        transform: scale(1) rotate(-45deg);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="checkmark"></div>
+</body>
+
+</html>
